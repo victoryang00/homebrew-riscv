@@ -2,12 +2,12 @@ class RiscvGnuToolchain < Formula
   desc "RISC-V Compiler GNU Toolchain using newlib"
   homepage "http://riscv.org"
   url "https://github.com/riscv/riscv-gnu-toolchain.git"
-  version "master"
+  version "main"
 
   bottle do
     root_url "http://riscv.org.s3.amazonaws.com/bottles"
-    rebuild 7
-    sha256 big_sur: "ff79aa9252e2636007a22e780389d0e5fa3bf0eb81a0df5e2b6d4ca74a6d851e"
+    rebuild 8
+    sha256 monterey: "9fe9c2113a60e9e0ceac29e7c7992001959b20a09c44c1a2781c0c90939489b8"
   end
 
   # enabling multilib by default, must choose to build without
