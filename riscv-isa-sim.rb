@@ -2,12 +2,12 @@ class RiscvIsaSim < Formula
   desc "RISC-V ISA simulator (spike)"
   homepage "http://riscv.org"
   url "https://github.com/riscv/riscv-isa-sim.git"
-  version "master"
+  version "main"
 
   bottle do
     root_url "http://riscv.org.s3.amazonaws.com/bottles"
-    rebuild 8
-    sha256 cellar: :any, big_sur: "04b32b3e3b59e517d895dd8d32352a41d9413888135b256e9d8e22a3c172559c"
+    rebuild 10
+    sha256 monterey: "15a1a4dba1c43cfe128d6f6d6edf5d441ab04b35beab52959812b13c3c437eb5"
   end
 
   depends_on "dtc"

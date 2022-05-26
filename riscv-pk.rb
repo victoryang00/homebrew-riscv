@@ -2,12 +2,12 @@ class RiscvPk < Formula
   desc "RISC-V Proxy Kernel"
   homepage "http://riscv.org"
   url "https://github.com/riscv/riscv-pk.git"
-  version "master"
+  version "main"
 
   bottle do
     root_url "http://riscv.org.s3.amazonaws.com/bottles"
-    rebuild 6
-    sha256 cellar: :any_skip_relocation, big_sur: "b81907fd0b41da4436b5255c4ff0135d67c55dc4ca174420f637ef7603841fd6"
+    rebuild 8
+    sha256 cellar: :any_skip_relocation, monterey: "3866b71a6d97a9cb63d29c589cf7177fcecc01f657accdf2e5604b4a1394ca9c"
   end
   option "with-NOmultilib", "Build WITHOUT multilib support"
   depends_on "gnu-sed" => :build
@@ -27,7 +27,6 @@ class RiscvPk < Formula
       inreplace "Makefile", " sed", " gsed"
       system "make", "install"
     end
-    prefix.install Dir["#{prefix}/riscv64-unknown-elf/*"]
   end
 
   test do
