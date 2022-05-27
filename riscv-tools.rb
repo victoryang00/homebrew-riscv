@@ -9,6 +9,7 @@ class RiscvTools < Formula
   depends_on "riscv-gnu-toolchain"
   depends_on "riscv-isa-sim"
   depends_on "riscv-pk"
+  depends_on "riscv-pk_32"
   depends_on "riscv-openocd"
   depends_on "riscv-rvv-llvm"
 
