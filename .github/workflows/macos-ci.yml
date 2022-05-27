@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: macos-latest
 
     steps:
     - name: initial checkout
@@ -26,6 +26,6 @@ jobs:
     - name: tap riscv
       run: brew tap victoryang00/riscv
     - name: install tools
-      run: arch -arm64 brew install riscv-tools
+      run: brew install riscv-tools
     - name: test
-      run: arch -arm64 brew test riscv-tools
+      run: brew test riscv-tools
