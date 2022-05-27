@@ -24,9 +24,6 @@ class RiscvPk < Formula
       # Requires gnu-sed's behavior to build, and don't want to change -Wno-unused
       inreplace "Makefile", " sed", " gsed"
       system "make install"
-      system "mkdir -p #{prefix}/../../riscv-pk_32/main"
-      system "wget https://img.victoryang00.cn/riscv-pk_32.zip"
-      system "unzip riscv-pk_32.zip -d #{prefix}/../../riscv-pk_32/main"
     end
   end
 

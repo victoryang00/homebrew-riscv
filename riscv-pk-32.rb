@@ -1,4 +1,4 @@
-class RiscvPk < Formula
+class RiscvPk32 < Formula
   desc "RISC-V Proxy Kernel"
   homepage "http://riscv.org"
   url "https://github.com/riscv/riscv-pk.git"
@@ -17,7 +17,8 @@ class RiscvPk < Formula
   def install
   system "wget https://img.victoryang00.cn/riscv-pk_32.zip"
   system "unzip riscv-pk_32.zip -d #{prefix}"
-  test do
-    system "false"
+    test do
+      system "false"
+    end
   end
 end
