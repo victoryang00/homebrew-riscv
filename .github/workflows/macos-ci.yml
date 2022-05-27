@@ -26,6 +26,6 @@ jobs:
     - name: tap riscv
       run: brew tap victoryang00/riscv
     - name: install tools
-      run: brew install riscv-tools
+      run: arch -arm64 brew install riscv-tools
     - name: test
-      run: brew test riscv-tools
+      run: arch -arm64 brew test riscv-tools
