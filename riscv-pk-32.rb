@@ -15,7 +15,7 @@ class RiscvPk32 < Formula
   depends_on "riscv-isa-sim" => :build
 
   def install
-  system "wget https://img.victoryang00.cn/riscv-pk_32.zip"
+  system "curl -O https://img.victoryang00.cn/riscv-pk_32.zip"
   system "unzip riscv-pk_32.zip -d #{prefix}"
     test do
       system "false"

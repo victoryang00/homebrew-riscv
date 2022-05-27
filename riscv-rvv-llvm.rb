@@ -23,7 +23,7 @@ class RiscvRvvLlvm < Formula
         system "export ARCH64=rv64gcv; export CLANG_ARCH64='${ARCH64}0p10 -menable-experimental-extensions';export ABI64=lp64d; export TARGET64=riscv64-unknown-elf; export CLANG_CFLAGS64='--target=${TARGET64} -march=${CLANG_ARCH64} -mabi=${ABI64}'" unless build.with?("NOVExt")
         
         # Build clang first
-        system "mkdir build_clang && cd build_clang && cmake -DLLVM_ENABLE_PROJECTS='clang;lld' -G'Unix Makefiles' ../llvm -GCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix} -DLLVM_TARGETS_TO_BUILD='RISCV' -DLLVM_DEFAULT_TARGET_TRIPLE=$TARGET64 -DLLVM_BUILD_EXAMPLES=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DLLVM_OPTIMIZED_TABLEGEN=ON -DLLVM_ENABLE_LIBXML2=OFF -DCLANG_DEFAULT_RTLIB=compiler-rt -DCLANG_DEFAULT_UNWINDLIB=libunwind -DCLANG_DEFAULT_CXX_STDLIB=libc++ && make -j4 && make install"
+        system "mkdir build_clang && cd build_clang && cmake -DLLVM_ENABLE_PROJECTS='clang;lld' -G'Unix Makefiles' ../llvm -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=#{prefix} -DLLVM_TARGETS_TO_BUILD='RISCV' -DLLVM_DEFAULT_TARGET_TRIPLE=$TARGET64 -DLLVM_BUILD_EXAMPLES=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DBUILD_SHARED_LIBS=OFF -DLLVM_OPTIMIZED_TABLEGEN=ON -DLLVM_ENABLE_LIBXML2=OFF -DCLANG_DEFAULT_RTLIB=compiler-rt -DCLANG_DEFAULT_UNWINDLIB=libunwind -DCLANG_DEFAULT_CXX_STDLIB=libc++ && make -j4 && make install"
 
         # Preparation for newlib
         system "export ARGSTR='\"$@\"'; echo '#{prefix}/bin/clang ${CLANG_CFLAGS64} -Wno-unused-command-line-argument ${ARGSTR}' > #{prefix}/bin/riscv64-unknown-elf-clang && chmod +x #{prefix}/bin/riscv64-unknown-elf-clang"
