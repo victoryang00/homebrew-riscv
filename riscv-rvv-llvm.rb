@@ -1,4 +1,4 @@
-class RiscvRVVLLVM < Formula
+class RiscvRvvLlvm < Formula
     desc "RISC-V LLVM Compiler with RVV support"
     homepage "http://llvm.org"
     url "https://github.com/llvm/llvm-project"
