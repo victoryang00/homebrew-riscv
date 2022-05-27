@@ -1,7 +1,7 @@
 class RiscvRvvLlvm < Formula
     desc "RISC-V LLVM Compiler with RVV support"
     homepage "http://llvm.org"
-    url "https://github.com/llvm/llvm-project"
+    url "https://github.com/llvm/llvm-project.git"
     version "main"
 
     option "with-NOVExt", "Build WITHOUT V Extension"
