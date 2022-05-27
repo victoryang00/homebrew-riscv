@@ -55,7 +55,7 @@ class RiscvGnuToolchain < Formula
     system "sed", "-i", ".bak", "s/.* x-darwin.$//", "riscv-gcc/gcc/config.host"
     
     system "./configure", *args
-    system "make"
+    system "make -j10"
 
     # don't install Python bindings if system already has them
     if File.exist?("#{HOMEBREW_PREFIX}/share/gcc-11.1.0")
