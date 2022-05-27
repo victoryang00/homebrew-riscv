@@ -16,15 +16,17 @@ class RiscvPk < Formula
 
   def install
     # using riscv-gcc from std env
-    ENV["CC"] = "riscv64-unknown-elf-gcc" if build.with?("unless")
-    ENV["CC"] = "riscv64-unknown-elf-gcc  -mabi=ilp32 -march=rv32imafdcv " unless build.with?("unless")
+    ENV["CC"] = "riscv64-unknown-elf-gcc"
 
     mkdir "build"
     cd "build" do
       system "../configure", "--prefix=#{prefix}", "--host=riscv64-unknown-elf", "--with-arch=rv64imafdcv"
       # Requires gnu-sed's behavior to build, and don't want to change -Wno-unused
       inreplace "Makefile", " sed", " gsed"
-      system "make", "install"
+      system "make install"
+      system "mkdir -p #{prefix}/../../riscv-pk_32/main"
+      system "wget https://img.victoryang00.cn/riscv-pk_32.zip"
+      system "unzip riscv-pk_32.zip -d #{prefix}/../../riscv-pk_32/main"
     end
   end
 
