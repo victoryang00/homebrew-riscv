@@ -21,8 +21,7 @@ class RiscvPk < Formula
 
     mkdir "build"
     cd "build" do
-      system "../configure", "--prefix=#{prefix}", "--host=riscv64-unknown-elf", "--with-arch=rv64imafdcv" if build.with?("NOmultilib")
-      system "../configure", "--prefix=#{prefix}", "--host=riscv32-unknown-elf", "--with-arch=rv32imafdcv" unless build.with?("NOmultilib")
+      system "../configure", "--prefix=#{prefix}", "--host=riscv64-unknown-elf", "--with-arch=rv64imafdcv"
       # Requires gnu-sed's behavior to build, and don't want to change -Wno-unused
       inreplace "Makefile", " sed", " gsed"
       system "make", "install"

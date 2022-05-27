@@ -19,8 +19,7 @@ class RiscvIsaSim < Formula
     mkdir "build"
     cd "build" do
       args = [
-        "--prefix=#{prefix}",
-        "--with-arch=rv64imafdcv",
+        "--prefix=#{prefix}"
       ]
       if build.with?("BExt")
         args << "--with-arch=rv64imafdcb"
