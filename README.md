@@ -1,4 +1,4 @@
-RISC-V Toolchain [![Build Status](https://github.com/riscv/homebrew-riscv/actions/workflows/macos-ci.yml/badge.svg)](https://github.com/riscv/homebrew-riscv/actions/workflows/macos-ci.yml)
+RISC-V Toolchain [![Build Status](https://github.com/victoryang00/homebrew-riscv/actions/workflows/macos-ci.yml/badge.svg)](https://github.com/victoryang00/homebrew-riscv/actions/workflows/macos-ci.yml)
 ================
 
 This provides packages to install the [RISC-V](http://riscv.org) toolchain on OS X using [Homebrew](http://brew.sh).
